@@ -1,9 +1,15 @@
-interface LayoutProps {
-  children: React.ReactNode;
-}
+import { ComponentProps } from "../../interfaces";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Layout = ({ children }: LayoutProps) => {
-  return <div>{children}</div>;
-};
+const Layout: React.FC<ComponentProps> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen">{children}</main>
+      <Footer />
+    </>
+  )
+}
 
 export default Layout;
